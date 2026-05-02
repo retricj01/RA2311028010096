@@ -42,6 +42,9 @@ async function Log(stack, level, pkg, message) {
     return;
   }
 
+  // Auto-truncate to meet server 48 char limit
+  message = message.substring(0, 48);
+
   try {
     const token = await getToken();
     const response = await axios.post(
@@ -58,7 +61,7 @@ async function Log(stack, level, pkg, message) {
     return response.data;
   } catch (err) {
     console.error(
-      `[Logger] Failed to send log: ${JSON.stringify(err.response?.data) || err.message}`
+      `[Logger] Failed: ${JSON.stringify(err.response?.data) || err.message}`
     );
   }
 }

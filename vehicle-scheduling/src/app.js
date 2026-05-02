@@ -21,7 +21,7 @@ app.get("/health", async (req, res) => {
 });
 
 app.listen(PORT, async () => {
-  await Log("backend", "info", "config",
-    `Vehicle Maintenance Scheduler running on port ${PORT}`);
+  await Log("backend", "info", "config", "Scheduler started on port 3000");
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
