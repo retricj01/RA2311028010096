@@ -12,12 +12,11 @@
  */
 
 const axios = require("axios");
-const { Log, getToken } = require("./vehicle-scheduling/src/middleware/logger");
+const { Log } = require("./src/middleware/logger");
 
 const NOTIFICATIONS_API =
   "http://20.207.122.201/evaluation-service/notifications";
 const ACCESS_CODE = "QkbpxH";
-
 
 const TYPE_WEIGHT = {
   Placement: 3,
